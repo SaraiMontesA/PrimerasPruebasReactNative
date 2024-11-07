@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 const icon = require('./assets/icon.png');
+let contador = 0;
 
 // ########################################################################
 // ##### APLICACION #######################################################
@@ -27,14 +28,23 @@ export default function App() {
 					resizeMode: 'contain'
 				}}
 			/>
-			<Text>Hola mundo!</Text>
+			<Text>Hola mundo!</Text>			
 			<Button
 				onPress={() => {
 					console.log('Me estás tocando el botón!');
+					contador++;
+					console.log({contador});
 				}}
-				title="Press Me"
+				title={"Sumar"}
 			/>
-			<Text>Hola mundo!</Text>
+			<Text>{contador}</Text>	
+			<Button
+				onPress={() => {
+					console.log('Me estás tocando el botón de reset!');
+					contador++;
+				}}
+				title={"Reset"}
+			/>
 			<StatusBar style="auto" />
 		</View>
 	);
