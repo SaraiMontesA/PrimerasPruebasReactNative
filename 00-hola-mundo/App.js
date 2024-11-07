@@ -3,7 +3,9 @@
 // ########################
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+
+const icon = require('./assets/icon.png');
 
 // ########################
 // ###### APLICACION ######
@@ -12,6 +14,13 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
 	return (
 		<View style={styles.container}>
+			<Image source={icon}
+				style={{ 
+					width: 200,
+					height: 100,
+					resizeMode: 'contain'
+				}}
+			/>
 			<Text>Hola mundo!</Text>
 			<Text>Hola mundo!</Text>
 			<StatusBar style="auto" />
@@ -22,7 +31,6 @@ export default function App() {
 // ########################
 // ####### ESTILOS ########
 // ########################
-
 
 const styles = StyleSheet.create({
 	container: {
