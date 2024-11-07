@@ -3,7 +3,13 @@
 // ########################
 
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import {
+	StyleSheet,
+	Text,
+	View,
+	Image,
+	Button
+} from 'react-native';
 
 const icon = require('./assets/icon.png');
 
@@ -22,6 +28,12 @@ export default function App() {
 				}}
 			/>
 			<Text>Hola mundo!</Text>
+			<Button
+				onPress={() => {
+					console.log('Me estás tocando el botón!');
+				}}
+				title="Press Me"
+			/>
 			<Text>Hola mundo!</Text>
 			<StatusBar style="auto" />
 		</View>
