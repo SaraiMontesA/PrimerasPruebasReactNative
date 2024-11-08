@@ -28,8 +28,8 @@ export default function App() {
 					resizeMode: 'contain'
 				}}
 			/>
-			<Text>Hola mundo!</Text>			
-			<Button
+			<Text style={styles.pepe}>Hola mundo!</Text>			
+			<Button className="pepe"
 				onPress={() => {
 					console.log('Me estás tocando el botón!');
 					contador++;
@@ -48,7 +48,7 @@ export default function App() {
 			<StatusBar style="auto" />
 		</View>
 	);
-}
+};
 
 // ########################################################################
 // ##### ESTILOS ##########################################################
@@ -60,5 +60,10 @@ const styles = StyleSheet.create({
 		backgroundColor: '#880',
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+
+	pepe: {
+		fontSize: 40,
+		backgroundColor: '#950',
 	},
 });
