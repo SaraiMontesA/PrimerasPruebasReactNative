@@ -12,6 +12,10 @@ import {
 	TextInput
 } from 'react-native';
 
+// ########################################################################
+// ##### VARIABLES ########################################################
+// ########################################################################
+
 const icon = require('./assets/icon.png');
 let contador = 0;
 
@@ -33,14 +37,15 @@ export default function App() {
 			<Text style={styles.subtitulo}>Sign in to your account</Text>	
 			<TextInput
 				style={styles.input}
-				placeholder="Mete tu cuenta"
+				placeholder="User"
 			>
 			</TextInput>	
 			<TextInput
 				style={styles.password}
-				placeholder="Mete tu cuenta"
+				placeholder="Password"
 			>
-			</TextInput>			
+			</TextInput>	
+
 			<Button className="pepe"
 				onPress={() => {
 					console.log('Me estás tocando el botón!');
@@ -82,6 +87,18 @@ const styles = StyleSheet.create({
 	},
 
 	subtitulo: {
+		fontSize: 20,
+		color: 'grey'
+		// backgroundColor: '#959',
+	},
+
+	button: {
+		fontSize: 20,
+		color: 'grey'
+		// backgroundColor: '#959',
+	},
+
+	text: {
 		fontSize: 20,
 		color: 'grey'
 		// backgroundColor: '#959',
