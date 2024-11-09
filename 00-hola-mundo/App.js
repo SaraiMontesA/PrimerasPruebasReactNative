@@ -4,15 +4,8 @@
 
 // import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
-import {
-	Text,
-	View,
-	Image,
-	Button,
-	TextInput
-} from 'react-native';
+import { View } from 'react-native';
 import { Login } from './pages/Login.js';
-// import { Blank } from './pages/Blank.js';
 
 // ########################################################################
 // ##### VARIABLES ########################################################
@@ -26,9 +19,7 @@ import { Login } from './pages/Login.js';
 export default function App() {
 	return (
 		<View style={styles.container}>
-			{/* //importamos el componente blank */}
-			{/* <Blank /> */}
-			<Login />
+			<Login />	{/* //importamos el componente Login */}
 		</View>
 	);
 };
@@ -40,7 +31,6 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#1ba89f',
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
