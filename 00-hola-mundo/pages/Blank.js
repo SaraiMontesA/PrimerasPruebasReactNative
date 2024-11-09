@@ -11,24 +11,19 @@ import {
 	Button,
 	TextInput
 } from 'react-native';
-import { Login } from './pages/Login.js';
-// import { Blank } from './pages/Blank.js';
 
-// ########################################################################
-// ##### VARIABLES ########################################################
-// ########################################################################
 
 
 // ########################################################################
 // ##### APLICACION #######################################################
 // ########################################################################
 
-export default function App() {
+export const Blank = () => {
 	return (
 		<View style={styles.container}>
-			{/* //importamos el componente blank */}
-			{/* <Blank /> */}
-			<Login />
+
+			<Text style={styles.titulo}>I WANT THIS</Text>
+			
 		</View>
 	);
 };
@@ -40,8 +35,65 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		width: '100%',
+		height: '100%',
 		backgroundColor: '#1ba89f',
 		alignItems: 'center',
 		justifyContent: 'center',
+	},
+
+	titulo: {
+		fontSize: 60,
+		fontWeight: 'bold',
+		color: '#c9fffc',
+		padding: 20,
+		// backgroundColor: '#959',
+	},
+
+	subtitulo: {
+		fontSize: 20,
+		color: '#c9fffc',
+		padding: 20,
+		// backgroundColor: '#959',
+	},
+
+	button: {
+		fontSize: 20,
+		color: '#c9fffc',
+		// backgroundColor: '#959',
+	},
+
+	text: {
+		fontSize: 20,
+		color: '#c9fffc',
+		// backgroundColor: '#959',
+	},
+
+	input: {
+		fontSize: 18,
+		color: '#15857d',
+		borderRadius: 30,
+		// borderWidth: 1,
+		paddingStart: 25,
+		width: '80%',
+		height: 50,
+		padding: 10,
+		marginTop: 20,
+		backgroundColor: '#fff',
+		shadowColor: 'grey',
+	},
+
+	password: {
+		fontSize: 18,
+		color: '#15857d',
+		borderRadius: 30,
+		// borderWidth: 1,
+		paddingStart: 25,
+		width: '80%',
+		height: 50,
+		padding: 10,
+		marginTop: 20,
+		backgroundColor: '#fff',
+		shadowColor: 'grey',
 	},
 });
