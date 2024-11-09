@@ -34,8 +34,6 @@ export const Login = () => {
 				}}
 			/> */}
 			<Text style={styles.titulo}>ME LO PIDO</Text>
-			{/* <Text style={styles.titulo}>I WANT THIS</Text> */}
-			{/* <Text style={styles.subtitulo}>Introduce tu cuenta</Text> */}
 			<TextInput
 				style={styles.input}
 				placeholder="Usuario"
@@ -98,17 +96,17 @@ const styles = StyleSheet.create({
 		// backgroundColor: '#959',
 	},
 
-	button: {
-		fontSize: 20,
-		color: '#c9fffc',
-		// backgroundColor: '#959',
-	},
+	// button: {
+	// 	fontSize: 20,
+	// 	color: '#c9fffc',
+	// 	// backgroundColor: '#959',
+	// },
 
-	text: {
-		fontSize: 20,
-		color: '#c9fffc',
-		// backgroundColor: '#959',
-	},
+	// text: {
+	// 	fontSize: 20,
+	// 	color: '#c9fffc',
+	// 	// backgroundColor: '#959',
+	// },
 
 	input: {
 		fontSize: 18,

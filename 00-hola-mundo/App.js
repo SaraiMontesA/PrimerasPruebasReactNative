@@ -6,6 +6,7 @@
 import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
 import { Login } from './pages/Login.js';
+import { Blank } from './pages/Blank.js';
 
 // ########################################################################
 // ##### VARIABLES ########################################################
@@ -19,7 +20,9 @@ import { Login } from './pages/Login.js';
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Login />	{/* //importamos el componente Login */}
+			{/* //importamos el componente */}
+			{/* <Blank /> */}
+			<Login />
 		</View>
 	);
 };
