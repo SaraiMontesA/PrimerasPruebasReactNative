@@ -26,27 +26,29 @@ let contador = 0;
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Image source={icon}
+			{/* <Image source={icon}
 				style={{ 
 					width: 200,
 					height: 100,
 					resizeMode: 'contain'
 				}}
-			/>
-			<Text style={styles.titulo}>Hello</Text>
-			<Text style={styles.subtitulo}>Sign in to your account</Text>	
+			/> */}
+			<Text style={styles.titulo}>ME LO PIDO</Text>
+			<Text style={styles.titulo}>I WANT THIS</Text>
+			{/* <Text style={styles.subtitulo}>Introduce tu cuenta</Text> */}
 			<TextInput
 				style={styles.input}
-				placeholder="User"
+				placeholder="Usuario"
 			>
 			</TextInput>	
 			<TextInput
 				style={styles.password}
-				placeholder="Password"
+				placeholder="Contraseña"
 			>
-			</TextInput>	
+			</TextInput>
+			<Text style={styles.subtitulo}>¿No tienes cuenta? regístrate</Text>	
 
-			<Button className="pepe"
+			{/* <Button className="pepe"
 				onPress={() => {
 					console.log('Me estás tocando el botón!');
 					contador++;
@@ -57,11 +59,11 @@ export default function App() {
 			<Text>{contador}</Text>	
 			<Button
 				onPress={() => {
-					console.log('Me estás tocando el botón de reset!');
-					contador++;
+					console.log('Reseteando');
+					contador = 0;
 				}}
 				title={"Reset"}
-			/>
+			/> */}
 			<StatusBar style="auto" />
 		</View>
 	);
@@ -74,37 +76,41 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#f1f1f1',
+		backgroundColor: '#1ba89f',
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
 
 	titulo: {
-		fontSize: 80,
+		fontSize: 60,
 		fontWeight: 'bold',
-		color: '#34434d',
+		color: '#c9fffc',
+		padding: 20,
 		// backgroundColor: '#959',
 	},
 
 	subtitulo: {
 		fontSize: 20,
-		color: 'grey'
+		color: '#c9fffc',
+		padding: 20,
 		// backgroundColor: '#959',
 	},
 
 	button: {
 		fontSize: 20,
-		color: 'grey'
+		color: '#c9fffc',
 		// backgroundColor: '#959',
 	},
 
 	text: {
 		fontSize: 20,
-		color: 'grey'
+		color: '#c9fffc',
 		// backgroundColor: '#959',
 	},
 
 	input: {
+		fontSize: 18,
+		color: '#15857d',
 		borderRadius: 30,
 		// borderWidth: 1,
 		paddingStart: 25,
@@ -117,6 +123,8 @@ const styles = StyleSheet.create({
 	},
 
 	password: {
+		fontSize: 18,
+		color: '#15857d',
 		borderRadius: 30,
 		// borderWidth: 1,
 		paddingStart: 25,
