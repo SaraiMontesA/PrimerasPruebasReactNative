@@ -2,7 +2,7 @@
 // ##### DEPENDENCIAS #####################################################
 // ########################################################################
 
-// import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 import {
 	Text,
@@ -34,6 +34,7 @@ export const Login = () => {
 				}}
 			/> */}
 			<Text style={styles.titulo}>ME LO PIDO</Text>
+			{/* <Text style={styles.titulo}>I WANT THIS</Text> */}
 			<TextInput
 				style={styles.input}
 				placeholder="Usuario"
@@ -62,7 +63,7 @@ export const Login = () => {
 				}}
 				title={"Reset"}
 			/> */}
-			{/* <StatusBar style="auto" /> */}
+			<StatusBar style="auto" />
 		</View>
 	);
 };
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
 	},
 
 	titulo: {
-		fontSize: 60,
+		fontSize: 50,
 		fontWeight: 'bold',
 		color: '#c9fffc',
 		padding: 20,
