@@ -18,17 +18,96 @@ import {
 // ##### APLICACION #######################################################
 // ########################################################################
 
-	const cambiaDisplay = (numero, display, setText) => {
-		if (display === '0') {
-			setText(numero);
+	// const botonPulsado = (botonPulsado, display, setText) => {
+	// 		cambiaDisplay(botonPulsado, display, setText);
+	// };
+
+	let numero1 = 0;
+	let numero2 = 0;
+	let operacion = 'vacio';
+
+	const cambiaDisplay = (botonPulsado, display, setText) => {
+
+		// Signos especiales
+		if (botonPulsado === 'C') {
+			setText('0');
+			numero1 = 0;
+			numero2 = 0;
+			operacion = 'vacio';
+		}
+		else if (botonPulsado === '()') {
+			console.log('botonPulsado:', botonPulsado);
+		}
+		else if (botonPulsado === '%') {
+			console.log('botonPulsado:', botonPulsado);
+		}
+		else if (botonPulsado === '+/-') {
+			console.log('botonPulsado:', botonPulsado);
+		}
+		else if (botonPulsado === '.') {
+			console.log('botonPulsado:', botonPulsado);
+		}
+
+		// Signos matemáticos
+		else if (botonPulsado === '+') {
+			if (numero1 === 0) {
+				operacion = '+';
+				setText('');
+			}
+			else {
+				setText('Ya hay num');
+			}
+				console.log('numero1:', numero1);
+		}
+
+		else if (botonPulsado === '=') {
+			if (numero1 === 0) {
+				numero1 = 'Error';
+			}
+			else {
+				numero2 = parseFloat(display);
+				let resultado = 0;
+				switch (operacion) {
+					case 'vacio':
+						resultado = 'error';
+					case '+':
+						resultado = numero1 + numero2;
+						break;
+					case '-':
+						resultado = numero1 - numero2;
+						break;
+					case 'x':
+						resultado = numero1 * numero2;
+						break;
+					case '/':
+						resultado = numero1 / numero2;
+						break;
+				}
+				numero1 =  resultado;
+				numero2 = 0;
+				operacion = ' ';
+			}
+		}
+
+
+		// Casos numéricos
+		else if (display === '0') {
+			numero1 = botonPulsado;
+			// console.log('EN EL IF:');
+			// console.log('botonPulsado:', botonPulsado);
+			// console.log('numero1:', numero1);
 		}
 		else {
-			setText(display + numero);
-		}	
-	};
+			// console.log('ANTES EN EL ELSE:');
+			// console.log('botonPulsado:', botonPulsado);
+			// console.log('numero1:', numero1);
+			numero1 = numero1 + botonPulsado;
+			// console.log('DESPUES EN EL ELSE:');
+			// console.log('botonPulsado:', botonPulsado);
+			// console.log('numero1:', numero1);
+		}
+		setText(numero1.toString());
 
-	const botonPulsado = (botonPulsado, display, setText) => {
-			cambiaDisplay(botonPulsado, display, setText);
 	};
 
 export const Calculadora = () => {
@@ -51,61 +130,61 @@ export const Calculadora = () => {
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('C', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('C', display, setText)}>
 					<Text style={styles.buttonTextNumero}>C</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log('()')}>
 					<Text style={styles.buttonTextNumero}>( )</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('%')}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('%', display, setText)}>
 					<Text style={styles.buttonTextNumero}>%</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('/')}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('/', display, setText)}>
 					<Text style={styles.buttonTextSigno}>/</Text>
 				</TouchableOpacity>
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('7', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('7', display, setText)}>
                     <Text style={styles.buttonTextNumero}>7</Text>
                 </TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('8', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('8', display, setText)}>
 					<Text style={styles.buttonTextNumero}>8</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('9', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('9', display, setText)}>
 					<Text style={styles.buttonTextNumero}>9</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('X', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('x', display, setText)}>
 					<Text style={styles.buttonTextSigno}>x</Text>
 				</TouchableOpacity>
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('4', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('4', display, setText)}>
 					<Text style={styles.buttonTextNumero}>4</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('5', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('5', display, setText)}>
 					<Text style={styles.buttonTextNumero}>5</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('6', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('6', display, setText)}>
 					<Text style={styles.buttonTextNumero}>6</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('-')}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('-', display, setText)}>
 					<Text style={styles.buttonTextSigno}>-</Text>
 				</TouchableOpacity>
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('1', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('1', display, setText)}>
 					<Text style={styles.buttonTextNumero}>1</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('2', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('2', display, setText)}>
 					<Text style={styles.buttonTextNumero}>2</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('3', display, setText)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('3', display, setText)}>
 					<Text style={styles.buttonTextNumero}>3</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('+')}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('+', display, setText)}>
 					<Text style={styles.buttonTextSigno}>+</Text>
 				</TouchableOpacity>
 			</View>
@@ -114,13 +193,13 @@ export const Calculadora = () => {
 				<TouchableOpacity style={styles.button} onPress={() => console.log('+/-')}>
 					<Text style={styles.buttonTextNumero}>+/-</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('0', display)}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('0', display)}>
 					<Text style={styles.buttonTextNumero}>0</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log(',')}>
-					<Text style={styles.buttonTextNumero}>,</Text>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('.', display, setText)}>
+					<Text style={styles.buttonTextNumero}>.</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('=')}>
+				<TouchableOpacity style={styles.button} onPress={() => cambiaDisplay('=', display, setText)}>
 					<Text style={styles.buttonTextSigno}>=</Text>
 				</TouchableOpacity>
 			</View>
@@ -156,7 +235,7 @@ const styles = StyleSheet.create({
 	},
 
 	titulo: {
-		fontSize: 60,
+		fontSize: 50,
 		fontWeight: 'bold',
 		color: '#ffffff',
 		// backgroundColor: '#959',
