@@ -3,6 +3,7 @@
 // ########################################################################
 
 // import { StatusBar } from 'expo-status-bar';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import {
 	Text,
@@ -18,6 +19,11 @@ import {
 // ########################################################################
 
 export const Calculadora = () => {
+    const [texto, setTexto] = useState('0');
+
+    const agregarNumero = (numero) => {
+        setTexto(texto + numero);
+	};
 	return (
 		<View style={styles.container}>
 
@@ -27,7 +33,7 @@ export const Calculadora = () => {
 			</View> */}
 
 			<View style={styles.cajaTexto}>
-				<Text style={styles.titulo}>9485.45</Text>
+				<Text style={styles.titulo}>{texto}</Text>
 			</View>
 
 			<View style={styles.cajaHorizontal}>
@@ -47,17 +53,13 @@ export const Calculadora = () => {
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() =>
-					{
-						pepe = pepe + '7';
-						console.log('7');
-					}}>
-					<Text style={styles.buttonTextNumero}>7</Text>
-				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('8')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('7')}>
+                    <Text style={styles.buttonTextNumero}>7</Text>
+                </TouchableOpacity>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('8')}>
 					<Text style={styles.buttonTextNumero}>8</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('9')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('9')}>
 					<Text style={styles.buttonTextNumero}>9</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log('X')}>
@@ -66,13 +68,13 @@ export const Calculadora = () => {
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('4')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('4')}>
 					<Text style={styles.buttonTextNumero}>4</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('5')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('5')}>
 					<Text style={styles.buttonTextNumero}>5</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('6')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('6')}>
 					<Text style={styles.buttonTextNumero}>6</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log('-')}>
@@ -81,13 +83,13 @@ export const Calculadora = () => {
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('1')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('1')}>
 					<Text style={styles.buttonTextNumero}>1</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('2')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('2')}>
 					<Text style={styles.buttonTextNumero}>2</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('%')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('3')}>
 					<Text style={styles.buttonTextNumero}>3</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log('+')}>
@@ -99,7 +101,7 @@ export const Calculadora = () => {
 				<TouchableOpacity style={styles.button} onPress={() => console.log('+/-')}>
 					<Text style={styles.buttonTextNumero}>+/-</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('0')}>
+				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('0')}>
 					<Text style={styles.buttonTextNumero}>0</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log(',')}>
