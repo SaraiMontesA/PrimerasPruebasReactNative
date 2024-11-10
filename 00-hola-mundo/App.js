@@ -5,8 +5,9 @@
 // import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
-import { Login } from './pages/Login.js';
 import { Blank } from './pages/Blank.js';
+import { Calculadora } from './pages/Calculadora.js';
+import { Login } from './pages/Login.js';
 
 // ########################################################################
 // ##### VARIABLES ########################################################
@@ -22,7 +23,8 @@ export default function App() {
 		<View style={styles.container}>
 			{/* //importamos el componente */}
 			{/* <Blank /> */}
-			<Login />
+			<Calculadora />
+			{/* <Login /> */}
 		</View>
 	);
 };
