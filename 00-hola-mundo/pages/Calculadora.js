@@ -18,17 +18,26 @@ import {
 // ##### APLICACION #######################################################
 // ########################################################################
 
-export const Calculadora = () => {
-    const [texto, setTexto] = useState('0');
-
-    const agregarNumero = (numero) => {
-		if (texto === '0') {
-			setTexto(numero);
+	const cambiaDisplay = (numero, display, setText) => {
+		if (display === '0') {
+			setText(numero);
 		}
 		else {
-        	setTexto(texto + numero);
+			setText(display + numero);
 		}	
 	};
+
+	const botonPulsado = (botonPulsado, display, setText) => {
+			cambiaDisplay(botonPulsado, display, setText);
+	};
+
+export const Calculadora = () => {
+    const [display, setDisplay] = useState('0');
+
+	const setText = (textoRecibido) => {
+		setDisplay(textoRecibido);
+	};
+
 	return (
 		<View style={styles.container}>
 
@@ -38,12 +47,11 @@ export const Calculadora = () => {
 			</View> */}
 
 			<View style={styles.cajaTexto}>
-				<Text style={styles.titulo}>{texto}</Text>
+				<Text style={styles.titulo}>{display}</Text>
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() =>
-					console.log('C')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('C', display, setText)}>
 					<Text style={styles.buttonTextNumero}>C</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log('()')}>
@@ -58,28 +66,28 @@ export const Calculadora = () => {
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('7')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('7', display, setText)}>
                     <Text style={styles.buttonTextNumero}>7</Text>
                 </TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('8')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('8', display, setText)}>
 					<Text style={styles.buttonTextNumero}>8</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('9')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('9', display, setText)}>
 					<Text style={styles.buttonTextNumero}>9</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => console.log('X')}>
+				<TouchableOpacity style={styles.button} onPress={() => console.log('X', display, setText)}>
 					<Text style={styles.buttonTextSigno}>x</Text>
 				</TouchableOpacity>
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('4')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('4', display, setText)}>
 					<Text style={styles.buttonTextNumero}>4</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('5')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('5', display, setText)}>
 					<Text style={styles.buttonTextNumero}>5</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('6')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('6', display, setText)}>
 					<Text style={styles.buttonTextNumero}>6</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log('-')}>
@@ -88,13 +96,13 @@ export const Calculadora = () => {
 			</View>
 
 			<View style={styles.cajaHorizontal}>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('1')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('1', display, setText)}>
 					<Text style={styles.buttonTextNumero}>1</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('2')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('2', display, setText)}>
 					<Text style={styles.buttonTextNumero}>2</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('3')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('3', display, setText)}>
 					<Text style={styles.buttonTextNumero}>3</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log('+')}>
@@ -106,7 +114,7 @@ export const Calculadora = () => {
 				<TouchableOpacity style={styles.button} onPress={() => console.log('+/-')}>
 					<Text style={styles.buttonTextNumero}>+/-</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.button} onPress={() => agregarNumero('0')}>
+				<TouchableOpacity style={styles.button} onPress={() => botonPulsado('0', display)}>
 					<Text style={styles.buttonTextNumero}>0</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.button} onPress={() => console.log(',')}>
