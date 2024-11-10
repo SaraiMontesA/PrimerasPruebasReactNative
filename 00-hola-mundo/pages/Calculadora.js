@@ -28,6 +28,17 @@ import {
 
 	const cambiaDisplay = (botonPulsado, display, setText) => {
 
+		console.log('');
+		console.log('#################################################################');
+		console.log('##### CONTROL SISTEM ANTES DE HACER NADA ########################');
+		console.log('#################################################################');
+		console.log('');
+		console.log('botonPulsado:', botonPulsado);
+		console.log('display:', display);
+		console.log('numero1:', numero1);
+		console.log('numero2:', numero2);
+		console.log('operacion:', operacion);
+
 		// Signos especiales
 		if (botonPulsado === 'C') {
 			setText('0');
@@ -50,14 +61,21 @@ import {
 
 		// Signos matemáticos
 		else if (botonPulsado === '+') {
-			if (numero1 === 0) {
-				operacion = '+';
-				setText('');
-			}
-			else {
-				setText('Ya hay num');
-			}
-				console.log('numero1:', numero1);
+			// if (numero1 === 0) {
+			// 	// Si no hay numero en la variable numero1
+			// }
+			// else {
+			// 	// Sumamos lo que hay en numero 1 con lo que hay en el display y lo guardamos en numero1
+			// 	numero1 = numero1 + parseFloat(display);
+			// 	// Ponemos el resultado de la suma en el display
+			// 	setText(numero1.toString());
+			// }
+			// Guardamos el número del display en la variable numero1
+			numero1 = parseFloat(display);
+			// Guardamos el signo de la operación en la variable operacion
+			operacion = '+';
+			// Vaciamos el display
+			setText('');
 		}
 
 		else if (botonPulsado === '=') {
@@ -69,7 +87,7 @@ import {
 				let resultado = 0;
 				switch (operacion) {
 					case 'vacio':
-						resultado = 'error';
+						resultado = 'Error';
 					case '+':
 						resultado = numero1 + numero2;
 						break;
@@ -83,31 +101,38 @@ import {
 						resultado = numero1 / numero2;
 						break;
 				}
-				numero1 =  resultado;
+				setText(resultado.toString());
+				numero1 =  0;
 				numero2 = 0;
-				operacion = ' ';
+				operacion = 'vacio';
+				resultado = 0;
 			}
 		}
 
 
 		// Casos numéricos
-		else if (display === '0') {
-			numero1 = botonPulsado;
-			// console.log('EN EL IF:');
-			// console.log('botonPulsado:', botonPulsado);
-			// console.log('numero1:', numero1);
+		else if (botonPulsado === '0' || botonPulsado === '1' || botonPulsado === '2' || botonPulsado === '3' ||
+			botonPulsado === '4' || botonPulsado === '5' || botonPulsado === '6' || botonPulsado === '7' ||
+			botonPulsado === '8' || botonPulsado === '9') {
+			if (display === '0') {
+				setText(botonPulsado);
+			}
+			else {
+				setText(display + botonPulsado);
+			}
 		}
-		else {
-			// console.log('ANTES EN EL ELSE:');
-			// console.log('botonPulsado:', botonPulsado);
-			// console.log('numero1:', numero1);
-			numero1 = numero1 + botonPulsado;
-			// console.log('DESPUES EN EL ELSE:');
-			// console.log('botonPulsado:', botonPulsado);
-			// console.log('numero1:', numero1);
-		}
-		setText(numero1.toString());
 
+
+		console.log('');
+		console.log('#################################################################');
+		console.log('##### CONTROL SISTEM DESPUES DE HACER ###########################');
+		console.log('#################################################################');
+		console.log('');
+		console.log('botonPulsado:', botonPulsado);
+		console.log('display:', display);
+		console.log('numero1:', numero1);
+		console.log('numero2:', numero2);
+		console.log('operacion:', operacion);
 	};
 
 export const Calculadora = () => {
@@ -119,7 +144,6 @@ export const Calculadora = () => {
 
 	return (
 		<View style={styles.container}>
-
 
 			{/* <View style={styles.cajaHorizontal}>
 				<Text style={styles.titulo}>Texto</Text>
