@@ -22,7 +22,12 @@ export const Calculadora = () => {
     const [texto, setTexto] = useState('0');
 
     const agregarNumero = (numero) => {
-        setTexto(texto + numero);
+		if (texto === '0') {
+			setTexto(numero);
+		}
+		else {
+        	setTexto(texto + numero);
+		}	
 	};
 	return (
 		<View style={styles.container}>
