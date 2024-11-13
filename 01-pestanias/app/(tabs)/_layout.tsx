@@ -13,7 +13,7 @@ import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 // ####################################################################################
-// ##### PANTALLA PRINCIPAL (LAYOUT DE PANTALLAS) #####################################
+// ##### PANTALLA PRINCIPAL (LAYOUT DE PANTALLAS O PESTAÑAS) ##########################
 // ####################################################################################
 
 export default function TabLayout() {
