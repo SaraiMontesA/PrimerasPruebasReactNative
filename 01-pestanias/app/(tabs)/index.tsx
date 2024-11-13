@@ -1,9 +1,17 @@
+// ####################################################################################
+// ##### IMPORTS ######################################################################
+// ####################################################################################
+
 import { Image, StyleSheet, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+
+// ####################################################################################
+// ##### PANTALLA PRINCIPAL (PANTALLA HOME) ###########################################
+// ####################################################################################
 
 export default function HomeScreen() {
 	return (
@@ -53,6 +61,10 @@ export default function HomeScreen() {
 		</ParallaxScrollView>
 	);
 }
+
+// ####################################################################################
+// ##### ESTILOS ######################################################################
+// ####################################################################################
 
 const styles = StyleSheet.create({
 	titleContainer: {
