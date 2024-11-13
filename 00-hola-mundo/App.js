@@ -2,17 +2,17 @@
 // ##### DEPENDENCIAS #####################################################
 // ########################################################################
 
-import { StatusBar } from 'expo-status-bar';
-import {
-	StyleSheet,
-	Text,
-	View,
-	Image,
-	Button
-} from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import { StyleSheet } from 'react-native';
+import { View } from 'react-native';
+import { Blank } from './pages/Blank.js';
+import { Calculadora } from './pages/Calculadora.js';
+import { Login } from './pages/Login.js';
 
-const icon = require('./assets/icon.png');
-let contador = 0;
+// ########################################################################
+// ##### VARIABLES ########################################################
+// ########################################################################
+
 
 // ########################################################################
 // ##### APLICACION #######################################################
@@ -21,31 +21,10 @@ let contador = 0;
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<Image source={icon}
-				style={{ 
-					width: 200,
-					height: 100,
-					resizeMode: 'contain'
-				}}
-			/>
-			<Text style={styles.pepe}>Hola mundo!</Text>			
-			<Button className="pepe"
-				onPress={() => {
-					console.log('Me estás tocando el botón!');
-					contador++;
-					console.log({contador});
-				}}
-				title={"Sumar"}
-			/>
-			<Text>{contador}</Text>	
-			<Button
-				onPress={() => {
-					console.log('Me estás tocando el botón de reset!');
-					contador++;
-				}}
-				title={"Reset"}
-			/>
-			<StatusBar style="auto" />
+			{/* //importamos el componente */}
+			{/* <Blank /> */}
+			<Calculadora />
+			{/* <Login /> */}
 		</View>
 	);
 };
@@ -57,13 +36,7 @@ export default function App() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#880',
 		alignItems: 'center',
 		justifyContent: 'center',
-	},
-
-	pepe: {
-		fontSize: 40,
-		backgroundColor: '#950',
 	},
 });
