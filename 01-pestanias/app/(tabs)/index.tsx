@@ -18,13 +18,9 @@ export default function HomeScreen() {
 		<ParallaxScrollView
 			headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
 			headerImage={
-				// <Image
-				// 	source={require('@/assets/images/partial-react-logo.png')}
-				// 	style={styles.reactLogo}
-				// />
 				<Image
-					style={styles.meLoPidoLogo}
-					source={require('@/assets/images/MeLoPido.png')}
+					source={require('@/assets/images/partial-react-logo.png')}
+					style={styles.reactLogo}
 				/>
 			}>
 
@@ -87,13 +83,6 @@ const styles = StyleSheet.create({
 	reactLogo: {
 		height: 178,
 		width: 290,
-		bottom: 0,
-		left: 0,
-		position: 'absolute',
-	},
-	meLoPidoLogo: {
-		height: 178,
-		width: 300,
 		bottom: 0,
 		left: 0,
 		position: 'absolute',

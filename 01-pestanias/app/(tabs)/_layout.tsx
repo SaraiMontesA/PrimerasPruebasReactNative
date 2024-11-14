@@ -22,7 +22,7 @@ export default function TabLayout() {
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+				tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
 				headerShown: false,
 				tabBarButton: HapticTab,
 				tabBarBackground: TabBarBackground,
@@ -52,7 +52,7 @@ export default function TabLayout() {
 				name="about"
 				options={{
 				title: 'Acerca de',
-				tabBarIcon: ({ color }) => <IconSymbol size={28} name="gear.fill" color={color} />,
+				tabBarIcon: ({ color }) => <IconSymbol size={28} name="setting.fill" color={color} />,
 				}}
 			/>
 		</Tabs>
