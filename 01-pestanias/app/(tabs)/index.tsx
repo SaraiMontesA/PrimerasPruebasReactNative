@@ -18,36 +18,44 @@ export default function HomeScreen() {
 		<ParallaxScrollView
 			headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
 			headerImage={
+				// <Image
+				// 	source={require('@/assets/images/partial-react-logo.png')}
+				// 	style={styles.reactLogo}
+				// />
 				<Image
-					source={require('@/assets/images/partial-react-logo.png')}
-					style={styles.reactLogo}
+					style={styles.meLoPidoLogo}
+					source={require('@/assets/images/MeLoPido.png')}
 				/>
 			}>
+
 			<ThemedView style={styles.titleContainer}>
-				<ThemedText type="title">Welcome! Acabas de aterrizar. Ahora vamos a despegar. Probemos</ThemedText>
-				<HelloWave />
+				<ThemedText type="title">Me lo pido</ThemedText>
+				<HelloWave />  {/*  Icono de mano saludando */}
 			</ThemedView>
+
 			<ThemedView style={styles.stepContainer}>
 				<ThemedText type="subtitle">Step 1: Try it</ThemedText>
 				<ThemedText>
 				Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
 				Press{' '}
-				<ThemedText type="defaultSemiBold">
-					{Platform.select({
-					ios: 'cmd + d',
-					android: 'cmd + m',
-					web: 'F12'
-					})}
-				</ThemedText>{' '}
+					<ThemedText type="defaultSemiBold">
+						{Platform.select({
+						ios: 'cmd + d',
+						android: 'cmd + m',
+						web: 'F12'
+						})}
+					</ThemedText>{' '}
 				to open developer tools.
 				</ThemedText>
 			</ThemedView>
+
 			<ThemedView style={styles.stepContainer}>
 				<ThemedText type="subtitle">Step 2: Explore</ThemedText>
 				<ThemedText>
 				Tap the Explore tab to learn more about what's included in this starter app.
 				</ThemedText>
 			</ThemedView>
+
 			<ThemedView style={styles.stepContainer}>
 				<ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
 				<ThemedText>
@@ -79,6 +87,13 @@ const styles = StyleSheet.create({
 	reactLogo: {
 		height: 178,
 		width: 290,
+		bottom: 0,
+		left: 0,
+		position: 'absolute',
+	},
+	meLoPidoLogo: {
+		height: 178,
+		width: 300,
 		bottom: 0,
 		left: 0,
 		position: 'absolute',
