@@ -26,11 +26,12 @@ export default function TabTwoScreen() {
 			// name="chevron.left.forwardslash.chevron.right"
 			// style={styles.headerImage}
 			// />
-			<Image source={require('@/assets/images/MeLoPido.png')} style={ styles.meLoPidoLogo } />
+			<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoGreen.png')} style={ styles.meLoPidoLogo } />
 		}>
 
 		<ThemedView style={styles.cajaLogo}>
 			{/* <Image source={require('@/assets/images/MeLoPido.png')} style={{ alignSelf: 'center' }} /> */}
+			<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={ styles.meLoPidoLogo } />
 		</ThemedView>
 
 		<ThemedView style={styles.titleContainer}>
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
 		left: -35,
 		position: 'absolute',
 	},
-	
+
 	titleContainer: {
 		flexDirection: 'row',
 		gap: 8,
@@ -146,7 +147,7 @@ const styles = StyleSheet.create({
 	},
 
 	meLoPidoLogo: {
-		height: 180,
-		width: 150,
+		height: 100,
+		width: 190,
 	},
 });
