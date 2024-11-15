@@ -111,9 +111,9 @@ const styles = StyleSheet.create({
 
 	cajaLogo: {
 		flexDirection: 'column',
-		top: 0,
-		paddingTop: 25,
-		height: 150,
+		top: 30,
+		paddingTop: 0,
+		height: 170,
 		gap: 8,
 		alignItems: 'center',
 		alignContent: 'center',

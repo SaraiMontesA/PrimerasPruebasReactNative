@@ -22,8 +22,8 @@ export default function TabLayout() {
 	return (
 		<Tabs
 			screenOptions={{
-				tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,
-				headerShown: false,
+				tabBarActiveTintColor: Colors[colorScheme ?? 'dark'].tint,	// Color del icono de  pestaña activa
+				headerShown: false,	// Oculta el encabezado de la pantalla
 				tabBarButton: HapticTab,
 				tabBarBackground: TabBarBackground,
 				tabBarStyle: Platform.select({
@@ -42,7 +42,7 @@ export default function TabLayout() {
 				}}
 			/>
 			<Tabs.Screen
-				name="explore"
+				name="signIn"
 				options={{
 				title: 'Explore',
 				tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
