@@ -81,24 +81,28 @@ const styles = StyleSheet.create({
 
 	cajaLogo: {
 		flexDirection: 'column',
-		// top: 60,
-		height: '50%',	// Altura
+		// marginBottom: 0,
+		// paddingBottom: 0,
+		height: '40%',	// Altura
 		width: '100%',	// Anchura
 		alignItems: 'center', // Alinea horizontalmente
 		alignContent: 'center', // Alinea verticalmente
-		justifyContent: 'flex-end', // Justifica
+		justifyContent: 'center', // Justifica
+		// backgroundColor: '#f8f0f2',
 	},
 
 	logo: {
-		height: '35%', // Altura
-		width: '60%', // Anchura
-		margin: 50,
+		// paddingTop: 20,
+		marginTop: '15%',
+		height: '50%', // Altura
+		width: '70%', // Anchura
+		// backgroundColor: '#f843f2',
 	},
 
 	cajaContenido: {
 		flexDirection: 'column',
 		margin: 0,
-		padding: 6,
+		paddingBottom: 12,
 		alignItems: 'center',
 		alignContent: 'center',
 		justifyContent: 'center',
