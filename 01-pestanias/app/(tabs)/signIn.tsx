@@ -44,7 +44,7 @@ export default function TabTwoScreen() {
 		</ThemedView>
 
 		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-			<TextInput style={styles.inputText} placeholder='Email'></TextInput>
+			<TextInput style={styles.inputText} placeholder='paperplane'></TextInput>
 		</ThemedView>
 
 		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
 
 	cajaLogo: {
 		flexDirection: 'column',
+		marginTop: 0,
 		// marginBottom: 0,
 		// paddingBottom: 0,
 		height: '40%',	// Altura

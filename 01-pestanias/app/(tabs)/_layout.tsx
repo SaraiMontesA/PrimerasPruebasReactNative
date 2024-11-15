@@ -42,24 +42,24 @@ export default function TabLayout() {
 				}}
 			/>
 			<Tabs.Screen
-				name="Explore"
+				name="explore"
 				options={{
 				title: 'Explore',
-				tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+				tabBarIcon: ({ color }) => <IconSymbol size={28} name="book.fill" color={color} />,
 				}}
 			/>
 			<Tabs.Screen
 				name="signIn"
 				options={{
 				title: 'signIn',
-				tabBarIcon: ({ color }) => <IconSymbol size={28} name="setting.fill" color={color} />,
+				tabBarIcon: ({ color }) => <IconSymbol size={28} name="star.fill" color={color} />,
 				}}
 			/>
 			<Tabs.Screen
 				name="about"
 				options={{
 				title: 'Acerca de',
-				tabBarIcon: ({ color }) => <IconSymbol size={28} name="setting.fill" color={color} />,
+				tabBarIcon: ({ color }) => <IconSymbol size={28} name="info.fill" color={color} />,
 				}}
 			/>
 		</Tabs>
