@@ -13,9 +13,6 @@ import {
 	TouchableOpacity
 } from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
@@ -127,7 +124,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     buttonText: {
-        color: 'black',
+		// Poner color de light y dark mode
+        color: '#333333',
 		// Texto en negrita
 		fontWeight: 'bold',
         fontSize: 18,
