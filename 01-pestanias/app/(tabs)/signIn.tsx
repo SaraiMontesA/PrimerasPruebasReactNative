@@ -94,8 +94,8 @@ const styles = StyleSheet.create({
 	logo: {
 		// paddingTop: 20,
 		marginTop: '15%',
-		height: '50%', // Altura
-		width: '70%', // Anchura
+		height: '40%', // Altura
+		width: '55%', // Anchura
 		// backgroundColor: '#f843f2',
 	},
 
