@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
 	},
 
 	logo: {
-		height: '40%', // Altura
+		height: '35%', // Altura
 		width: '60%', // Anchura
 		margin: 50,
 	},
