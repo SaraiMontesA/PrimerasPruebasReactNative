@@ -21,6 +21,8 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 // ##### VARIABLES ####################################################################
 // ####################################################################################
 
+import { lang } from '@/app/lang/es.js';	// Importa el archivo de idioma
+
 // import { version } from './_layout';
 import { colors } from './_layout';
 
