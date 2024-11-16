@@ -12,4 +12,6 @@ export const lang = {
 	contGoogle: "Continua con Google",
 	contApple: "Continua con Apple",
 	// ##### Pestaña about #####
+	// ##### Pestaña palabra #####
+	
 };
