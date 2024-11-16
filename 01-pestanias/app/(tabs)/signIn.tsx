@@ -21,10 +21,29 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 // ##### VARIABLES ####################################################################
 // ####################################################################################
 
-import { lang } from '@/app/lang/es.js';	// Importa el archivo de idioma
+// ##### CARGAMOS LA VERSION #####
+import { version } from './_layout';
 
-// import { version } from './_layout';
+// ##### CARGAMOS LOS COLORES #####
 import { colors } from './_layout';
+
+// ##### CARGAMOS EL IDIOMA #####
+import { idio } from './_layout';
+
+const idioma = idio.idioma;
+let lenguaje;
+
+switch (idioma) {
+	case 'es':
+		lenguaje = require(`@/app/lang/es.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+	case 'en':
+		lenguaje = require(`@/app/lang/en.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+	default:
+		lenguaje = require(`@/app/lang/es.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+}
 
 // ####################################################################################
 // ##### PANTALLA PRINCIPAL (PANTALLA EXPLORE) ########################################
@@ -42,11 +61,11 @@ export default function TabTwoScreen() {
 		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaResto}>
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-				<ThemedText type="title">Crea una cuenta</ThemedText>
+				<ThemedText type="title">{lenguaje.createAccount}</ThemedText>
 			</ThemedView>
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-				<ThemedText style={styles.text}>Ingresa tu email para iniciar sesión</ThemedText>
+				<ThemedText style={styles.text}>{lenguaje.signIn}</ThemedText>
 			</ThemedView>
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
@@ -59,13 +78,13 @@ export default function TabTwoScreen() {
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
 				<TouchableOpacity style={styles.button}>
-					<Text style={styles.buttonText}>Continua con Google</Text>
+					<Text style={styles.buttonText}>{lenguaje.contGoogle}</Text>
 				</TouchableOpacity>
 			</ThemedView>
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
 				<TouchableOpacity style={styles.button}>
-					<Text style={styles.buttonText}>Continua con Apple</Text>
+					<Text style={styles.buttonText}>{lenguaje.contApple}</Text>
 				</TouchableOpacity>
 			</ThemedView>
 		</ThemedView>

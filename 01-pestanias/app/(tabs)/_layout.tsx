@@ -20,6 +20,10 @@ export const version = {
 	ver: '1.0',
 };
 
+export const idio = {
+	idioma: 'es',
+};
+
 export const colors = {
     light: '#dddddd',
     dark: '#353636',

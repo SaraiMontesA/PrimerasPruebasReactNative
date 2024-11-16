@@ -14,9 +14,29 @@ import { ThemedView } from '@/components/ThemedView';
 // ##### VARIABLES ####################################################################
 // ####################################################################################
 
-import { lang } from '@/app/lang/es.js';	// Importa el archivo de idioma
+// ##### CARGAMOS LA VERSION #####
 import { version } from './_layout';
+
+// ##### CARGAMOS LOS COLORES #####
 import { colors } from './_layout';
+
+// ##### CARGAMOS EL IDIOMA #####
+import { idio } from './_layout';
+
+const idioma = idio.idioma;
+let lenguaje;
+
+switch (idioma) {
+	case 'es':
+		lenguaje = require(`@/app/lang/es.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+	case 'en':
+		lenguaje = require(`@/app/lang/en.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+	default:
+		lenguaje = require(`@/app/lang/es.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+}
 
 // ####################################################################################
 // ##### PANTALLA PRINCIPAL (PANTALLA EXPLORE) ########################################
@@ -34,12 +54,12 @@ export default function TabTwoScreen() {
 		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaResto}>
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-				<ThemedText type="title">{lang.version}</ThemedText>
+				<ThemedText type="title">{lenguaje.version}</ThemedText>
 				<ThemedText type="title">{version.ver}</ThemedText>
 			</ThemedView>
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-				<ThemedText style={styles.text}>{lang.compani}</ThemedText>
+				<ThemedText style={styles.text}>{lenguaje.compani}</ThemedText>
 			</ThemedView>
 
 		</ThemedView>
