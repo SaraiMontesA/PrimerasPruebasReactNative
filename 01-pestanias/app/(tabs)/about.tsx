@@ -55,6 +55,7 @@ export default function TabTwoScreen() {
 
 			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
 				<ThemedText type="title">{lenguaje.version}</ThemedText>
+				<ThemedText type="title"></ThemedText>
 				<ThemedText type="title">{version.ver}</ThemedText>
 			</ThemedView>
 
