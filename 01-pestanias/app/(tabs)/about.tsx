@@ -2,14 +2,29 @@
 // ##### IMPORTS ######################################################################
 // ####################################################################################
 
-import { StyleSheet, Image, Platform, View } from 'react-native';
+import {
+	StyleSheet,
+	Image,
+	Platform,
+	View,
+	TextInput,
+	Text,
+	Button,
+	TouchableOpacity
+} from 'react-native';
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
+
+// ####################################################################################
+// ##### VARIABLES ####################################################################
+// ####################################################################################
+
+export const colors = {
+    light: '#dddddd',
+    dark: '#353636',
+};
 
 // ####################################################################################
 // ##### PANTALLA PRINCIPAL (PANTALLA EXPLORE) ########################################
@@ -17,74 +32,25 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 
 export default function TabTwoScreen() {
 	return (
+				
+		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaBody}>
 
-	<ThemedView style={{ light: '#D0D0D0', dark: '#353636' }}>
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLogo}>
+				<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.logo} />
+			</ThemedView>
 
-		{/* <ParallaxScrollView
-		headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-		headerImage={
-			// <IconSymbol
-			// size={310}
-			// color="#808080"
-			// name="chevron.left.forwardslash.chevron.right"
-			// style={styles.headerImage}
-			// />
-			<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoGreen.png')} style={ styles.meLoPidoLogo } />
-		}> */}
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaRestoContenido}>
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+					<ThemedText type="title">Versión: </ThemedText>
+				</ThemedView>
 
-        <ThemedView style={styles.cajaLogo}>
-            <Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.meLoPidoLogo} />
-        </ThemedView>
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+					<ThemedText style={styles.cajaContenido}>Hecho por:</ThemedText>
+					<ThemedText style={styles.cajaContenido}>Samon Software</ThemedText>
+				</ThemedView>
+			</ThemedView>
 
-		{/* <ThemedView style={styles.cajaLogo}>
-			<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={ styles.meLoPidoLogo } />
-		</ThemedView> */}
-
-		<ThemedView style={styles.titleContainer}>
-			<ThemedText type="title">Cosas a implementar</ThemedText>
 		</ThemedView>
-
-		<Collapsible title="Android, iOS, and web support">					
-			<ThemedText> · Cosa 1</ThemedText>
-			<ThemedText> · Cosa 2</ThemedText>
-			<ThemedText> · Cosa 3</ThemedText>
-			<ThemedText> · Cosa 4</ThemedText>
-		</Collapsible>
-
-		<Collapsible title="Front End">
-			<Collapsible title="Pestaña Lista de deseos">		
-				<ThemedText> · Cosa 1</ThemedText>
-				<ThemedText> · Cosa 2</ThemedText>
-				<ThemedText> · Cosa 3</ThemedText>
-				<ThemedText> · Cosa 4</ThemedText>
-			</Collapsible>
-			<Collapsible title="Pestaña Contactos">		
-				<ThemedText> · ListView con listado de amigos, enlace a sus listas</ThemedText>
-				<ThemedText> · Cosa 2</ThemedText>
-				<ThemedText> · Cosa 3</ThemedText>
-				<ThemedText> · Cosa 4</ThemedText>
-			</Collapsible>
-			<Collapsible title="Pestaña Contactos Detalle">		
-				<ThemedText> · ListView con listado de deseos del contacto elegido (enlaces ciegos)</ThemedText>
-			</Collapsible>
-			<Collapsible title="Pestaña Datos de usuario">		
-				<ThemedText> · Cosa 1</ThemedText>
-				<ThemedText> · Cosa 2</ThemedText>
-				<ThemedText> · Cosa 3</ThemedText>
-				<ThemedText> · Cosa 4</ThemedText>
-			</Collapsible>
-		</Collapsible>
-
-		<Collapsible title="Back End">
-			<Collapsible title="Base de datos">		
-				<ThemedText> · Cosa 1</ThemedText>
-				<ThemedText> · Cosa 2</ThemedText>
-				<ThemedText> · Cosa 3</ThemedText>
-				<ThemedText> · Cosa 4</ThemedText>
-			</Collapsible>
-		</Collapsible>
-		
-	</ThemedView>
 	);
 }
 
@@ -93,35 +59,82 @@ export default function TabTwoScreen() {
 // ####################################################################################
 
 const styles = StyleSheet.create({
-	// body: {
-	// 	backgroundColor: '#f0f0f0',
-	// },
 
-	headerImage: {
-		color: '#808080',
-		bottom: -90,
-		left: -35,
-		position: 'absolute',
-	},
-
-	titleContainer: {
-		flexDirection: 'row',
-		gap: 0,
+	cajaBody: {
+		flexDirection: 'column',
+		height: '100%',	// Altura
+		width: '100%',	// Anchura
 	},
 
 	cajaLogo: {
 		flexDirection: 'column',
-		top: 30,
-		paddingTop: 0,
-		height: 170,
-		gap: 8,
+		marginTop: 0,
+		// marginBottom: 0,
+		// paddingBottom: 0,
+		height: '40%',	// Altura
+		width: '100%',	// Anchura
+		alignItems: 'center', // Alinea horizontalmente
+		alignContent: 'center', // Alinea verticalmente
+		justifyContent: 'center', // Justifica
+		// backgroundColor: '#f8f0f2',
+	},
+
+	cajaRestoContenido: {
+		flexDirection: 'column',
+		marginTop: 0,
+		// marginBottom: 0,
+		// paddingBottom: 0,
+		height: '60%',	// Altura
+		width: '100%',	// Anchura
+		alignItems: 'center', // Alinea horizontalmente
+		alignContent: 'center', // Alinea verticalmente
+		justifyContent: 'center', // Justifica
+		backgroundColor: '#555555',
+	},
+
+	logo: {
+		// paddingTop: 20,
+		marginTop: '15%',
+		height: '40%', // Altura
+		width: '55%', // Anchura
+		// backgroundColor: '#f843f2',
+	},
+
+	cajaContenido: {
+		flexDirection: 'column',
+		margin: 0,
+		paddingBottom: 12,
 		alignItems: 'center',
 		alignContent: 'center',
 		justifyContent: 'center',
+        // backgroundColor: '#f8f0f2',
 	},
 
-	meLoPidoLogo: {
-		height: 100,
-		width: 190,
+	inputText: {
+		borderColor: '#f0f0f0',
+		borderWidth: 2,
+		height: 50,
+		width: '80%',
+		borderRadius: 15,
+		paddingLeft: 15,
+		paddingRight: 15,
 	},
+
+    button: {
+        // borderColor: 'black',
+        // borderWidth: 1,
+        height: 50,
+        width: '80%',
+        borderRadius: 15,
+        backgroundColor: '#f0f0f0',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonText: {
+		// Poner color de light y dark mode
+        color: '#333333',
+		// Texto en negrita
+		fontWeight: 'bold',
+        fontSize: 18,
+    },
 });

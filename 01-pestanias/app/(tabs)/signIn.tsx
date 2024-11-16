@@ -36,35 +36,38 @@ export default function TabTwoScreen() {
 	<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaBody}>
 
 		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLogo}>
-            <Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.logo} />
-        </ThemedView>
-
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-			<ThemedText type="title">Crea una cuenta</ThemedText>
+			<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.logo} />
 		</ThemedView>
 
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-			<ThemedText style={styles.cajaContenido}>Ingresa tu email para iniciar sesión</ThemedText>
-		</ThemedView>
+		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaResto}>
 
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-			<TextInput style={styles.inputText} placeholder='paperplane'></TextInput>
-		</ThemedView>
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+				<ThemedText type="title">Crea una cuenta</ThemedText>
+			</ThemedView>
 
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-			<ThemedText style={styles.cajaContenido}>------------------------------ o ------------------------------</ThemedText>
-		</ThemedView>
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+				<ThemedText style={styles.text}>Ingresa tu email para iniciar sesión</ThemedText>
+			</ThemedView>
 
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-			<TouchableOpacity style={styles.button}>
-				<Text style={styles.buttonText}>Continua con Google</Text>
-			</TouchableOpacity>
-		</ThemedView>
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+				<TextInput style={styles.inputText} placeholder='Email'></TextInput>
+			</ThemedView>
 
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-			<TouchableOpacity style={styles.button}>
-				<Text style={styles.buttonText}>Continua con Apple</Text>
-			</TouchableOpacity>
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+				<ThemedText style={styles.text}>------------------------------ o ------------------------------</ThemedText>
+			</ThemedView>
+
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+				<TouchableOpacity style={styles.button}>
+					<Text style={styles.buttonText}>Continua con Google</Text>
+				</TouchableOpacity>
+			</ThemedView>
+
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+				<TouchableOpacity style={styles.button}>
+					<Text style={styles.buttonText}>Continua con Apple</Text>
+				</TouchableOpacity>
+			</ThemedView>
 		</ThemedView>
 
 	</ThemedView>
@@ -78,43 +81,59 @@ export default function TabTwoScreen() {
 const styles = StyleSheet.create({
 
 	cajaBody: {
+		// backgroundColor: '#985858',
 		flexDirection: 'column',
 		height: '100%',	// Altura
 		width: '100%',	// Anchura
 	},
 
 	cajaLogo: {
+		// backgroundColor: '#985858',
 		flexDirection: 'column',
 		marginTop: 0,
 		// marginBottom: 0,
 		// paddingBottom: 0,
-		height: '40%',	// Altura
+		height: '35%',	// Altura
 		width: '100%',	// Anchura
 		alignItems: 'center', // Alinea horizontalmente
 		alignContent: 'center', // Alinea verticalmente
 		justifyContent: 'center', // Justifica
-		// backgroundColor: '#f8f0f2',
+		backgroundColor: '#999999',
 	},
 
-	logo: {
-		// paddingTop: 20,
-		marginTop: '15%',
-		height: '40%', // Altura
-		width: '55%', // Anchura
-		// backgroundColor: '#f843f2',
+	cajaResto: {
+		// backgroundColor: '#985858',
+		flexDirection: 'column',
+		height: '65%',	// Altura
+		width: '100%',	// Anchura
+		margin: 0,
+		alignItems: 'center', // Alinea horizontalmente
+		alignContent: 'center', // Alinea verticalmente
+		justifyContent: 'center', // Justifica
+		gap: 25,
 	},
 
 	cajaContenido: {
+		// backgroundColor: '#f8f0f2',
 		flexDirection: 'column',
+		width: '100%',	// Anchura
 		margin: 0,
 		paddingBottom: 12,
 		alignItems: 'center',
 		alignContent: 'center',
 		justifyContent: 'center',
-        // backgroundColor: '#f8f0f2',
+	},
+
+	logo: {
+		// backgroundColor: '#985858',
+		// paddingTop: 20,
+		marginTop: '15%',
+		height: '40%', // Altura
+		width: '55%', // Anchura
 	},
 
 	inputText: {
+		// backgroundColor: '#985858',
 		borderColor: '#f0f0f0',
 		borderWidth: 2,
 		height: 50,
@@ -125,20 +144,28 @@ const styles = StyleSheet.create({
 	},
 
     button: {
-        // borderColor: 'black',
-        // borderWidth: 1,
+		// backgroundColor: '#985858',
+        backgroundColor: '#f0f0f0',
         height: 50,
         width: '80%',
         borderRadius: 15,
-        backgroundColor: '#f0f0f0',
         justifyContent: 'center',
         alignItems: 'center',
     },
+	
     buttonText: {
-		// Poner color de light y dark mode
+		// backgroundColor: '#985858',
+		// TODO: Poner color de light y dark mode
         color: '#333333',
 		// Texto en negrita
 		fontWeight: 'bold',
+        fontSize: 18,
+    },
+	
+    text: {
+		// backgroundColor: '#985858',
+		// TODO: Poner color de light y dark mode
+        color: '#333333',
         fontSize: 18,
     },
 });
