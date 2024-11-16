@@ -2,67 +2,88 @@
 // ##### IMPORTS ######################################################################
 // ####################################################################################
 
-import { Image, StyleSheet, Platform } from 'react-native';
+import {
+	StyleSheet,
+	Image,
+	Platform,
+	View,
+	TextInput,
+	Text,
+	Button,
+	TouchableOpacity,
+	Alert
+} from 'react-native';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 // ####################################################################################
-// ##### PANTALLA PRINCIPAL (PANTALLA HOME) ###########################################
+// ##### VARIABLES ####################################################################
 // ####################################################################################
 
-export default function HomeScreen() {
+// ##### CARGAMOS LA VERSION #####
+import { version } from './_layout';
+
+// ##### CARGAMOS LOS COLORES #####
+import { colors } from './_layout';
+
+// ##### CARGAMOS EL IDIOMA #####
+import { idio } from './_layout';
+
+const idioma = idio.idioma;
+let lenguaje;
+
+switch (idioma) {
+	case 'es':
+		lenguaje = require(`@/app/lang/es.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+	case 'en':
+		lenguaje = require(`@/app/lang/en.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+	default:
+		lenguaje = require(`@/app/lang/es.js`).lang; // Cargar dinámicamente el archivo de idioma
+		break;
+}
+
+// ####################################################################################
+// ##### PANTALLA PRINCIPAL (PANTALLA EXPLORE) ########################################
+// ####################################################################################
+
+export default function TabTwoScreen() {
+	const showAlert = () => {
+		Alert.alert(
+			"Mensaje",
+			"Has pulsado el botón",
+			[
+			{ text: "OK", onPress: () => console.log("OK Pressed") }
+			],
+			{ cancelable: false }
+		);
+	};
+
 	return (
-		<ParallaxScrollView
-			headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-			headerImage={
-				<Image
-					source={require('@/assets/images/partial-react-logo.png')}
-					style={styles.reactLogo}
-				/>
-			}>
+		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaBody}>
 
-			<ThemedView style={styles.titleContainer}>
-				<ThemedText type="title">Me lo pido</ThemedText>
-				<HelloWave />  {/*  Icono de mano saludando */}
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLogo}>
+				<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.logo} />
 			</ThemedView>
 
-			<ThemedView style={styles.stepContainer}>
-				<ThemedText type="subtitle">Step 1: Try it</ThemedText>
-				<ThemedText>
-				Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-				Press{' '}
-					<ThemedText type="defaultSemiBold">
-						{Platform.select({
-						ios: 'cmd + d',
-						android: 'cmd + m',
-						web: 'F12'
-						})}
-					</ThemedText>{' '}
-				to open developer tools.
-				</ThemedText>
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaResto}>
+
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+					<TouchableOpacity style={styles.button}>
+						<Text style={styles.buttonText}>{lenguaje.contGoogle}</Text>
+					</TouchableOpacity>
+				</ThemedView>
+
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+					<TouchableOpacity style={styles.button} onPress={showAlert}>
+						<Text style={styles.buttonText}>{lenguaje.contApple}</Text>
+					</TouchableOpacity>
+				</ThemedView>
 			</ThemedView>
 
-			<ThemedView style={styles.stepContainer}>
-				<ThemedText type="subtitle">Step 2: Explore</ThemedText>
-				<ThemedText>
-				Tap the Explore tab to learn more about what's included in this starter app.
-				</ThemedText>
-			</ThemedView>
-
-			<ThemedView style={styles.stepContainer}>
-				<ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-				<ThemedText>
-				When you're ready, run{' '}
-				<ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-				<ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-				<ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-				<ThemedText type="defaultSemiBold">app-example</ThemedText>.
-				</ThemedText>
-			</ThemedView>
-		</ParallaxScrollView>
+		</ThemedView>
 	);
 }
 
@@ -71,20 +92,92 @@ export default function HomeScreen() {
 // ####################################################################################
 
 const styles = StyleSheet.create({
-	titleContainer: {
-		flexDirection: 'row',
+
+	cajaBody: {
+		// backgroundColor: '#985858',
+		flexDirection: 'column',
+		height: '100%',	// Altura
+		width: '100%',	// Anchura
+	},
+
+	cajaLogo: {
+		// backgroundColor: '#985858',
+		flexDirection: 'column',
+		marginTop: 0,
+		// marginBottom: 0,
+		// paddingBottom: 0,
+		height: '35%',	// Altura
+		width: '100%',	// Anchura
+		alignItems: 'center', // Alinea horizontalmente
+		alignContent: 'center', // Alinea verticalmente
+		justifyContent: 'center', // Justifica
+	},
+
+	cajaResto: {
+		// backgroundColor: '#985858',
+		flexDirection: 'column',
+		height: '65%',	// Altura
+		width: '100%',	// Anchura
+		margin: 0,
+		alignItems: 'center', // Alinea horizontalmente
+		alignContent: 'center', // Alinea verticalmente
+		justifyContent: 'center', // Justifica
+		gap: 10,
+	},
+
+	cajaContenido: {
+		// backgroundColor: '#f8f0f2',
+		flexDirection: 'column',
+		width: '100%',	// Anchura
+		margin: 0,
+		paddingBottom: 12,
 		alignItems: 'center',
-		gap: 8,
+		alignContent: 'center',
+		justifyContent: 'center',
 	},
-	stepContainer: {
-		gap: 8,
-		marginBottom: 8,
+
+	logo: {
+		// backgroundColor: '#985858',
+		// paddingTop: 20,
+		marginTop: '15%',
+		height: '40%', // Altura
+		width: '55%', // Anchura
 	},
-	reactLogo: {
-		height: 178,
-		width: 290,
-		bottom: 0,
-		left: 0,
-		position: 'absolute',
+
+	inputText: {
+		// backgroundColor: '#985858',
+		borderColor: '#f0f0f0',
+		borderWidth: 2,
+		height: 50,
+		width: '80%',
+		borderRadius: 15,
+		paddingLeft: 15,
+		paddingRight: 15,
 	},
+
+    button: {
+		// backgroundColor: '#985858',
+        backgroundColor: '#f0f0f0',
+        height: 50,
+        width: '80%',
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+	
+    buttonText: {
+		// backgroundColor: '#985858',
+		// TODO: Poner color de light y dark mode
+        color: '#333333',
+		// Texto en negrita
+		fontWeight: 'bold',
+        fontSize: 18,
+    },
+	
+    text: {
+		// backgroundColor: '#985858',
+		// TODO: Poner color de light y dark mode
+        color: '#333333',
+        fontSize: 18,
+    },
 });

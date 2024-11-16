@@ -5,17 +5,13 @@
 import {
 	StyleSheet,
 	Image,
-	Platform,
-	View,
 	TextInput,
 	Text,
-	Button,
 	TouchableOpacity
 } from 'react-native';
 
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
 
 // ####################################################################################
 // ##### VARIABLES ####################################################################
