@@ -21,10 +21,8 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 // ##### VARIABLES ####################################################################
 // ####################################################################################
 
-export const colors = {
-    light: '#dddddd',
-    dark: '#353636',
-};
+// import { version } from './_layout';
+import { colors } from './_layout';
 
 // ####################################################################################
 // ##### PANTALLA PRINCIPAL (PANTALLA EXPLORE) ########################################
@@ -98,7 +96,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center', // Alinea horizontalmente
 		alignContent: 'center', // Alinea verticalmente
 		justifyContent: 'center', // Justifica
-		backgroundColor: '#999999',
 	},
 
 	cajaResto: {
@@ -110,7 +107,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center', // Alinea horizontalmente
 		alignContent: 'center', // Alinea verticalmente
 		justifyContent: 'center', // Justifica
-		gap: 25,
+		gap: 10,
 	},
 
 	cajaContenido: {
