@@ -76,7 +76,7 @@ export default function TabTwoScreen() {
 				
 				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPizarra}>					
 					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-						{['S', 'A', 'I', 'O', 'A'].map((letra, index) => (
+						{['S', 'U', 'I', 'O', 'A'].map((letra, index) => (
                             <Text
                                 key={index}
                                 style={[styles.letra, { backgroundColor: backgroundColors[index] }]}
