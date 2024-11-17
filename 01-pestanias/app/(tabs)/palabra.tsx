@@ -8,11 +8,13 @@ import {
 	Platform,
 	View,
 	Text,
+	TextInput,
 	Button,
 	TouchableOpacity,
 	Alert
 } from 'react-native';
 
+import React, { useState } from 'react';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
@@ -49,16 +51,21 @@ switch (idioma) {
 // ####################################################################################
 
 export default function TabTwoScreen() {
-	// const showAlert = () => {
-	// 	Alert.alert(
-	// 		"Mensaje",
-	// 		"Has pulsado el botón",
-	// 		[
-	// 		{ text: "OK", onPress: () => console.log("OK Pressed") }
-	// 		],
-	// 		{ cancelable: false }
-	// 	);
-	// };
+    const [backgroundColors, setBackgroundColors] = useState(['#abcdef', '#abcdef', '#abcdef', '#abcdef', '#abcdef']);
+    const [inputText, setInputText] = useState('');
+    const palabra = 'SAUNA'; // La palabra con la que se va a comparar
+
+    const compareLetters = (index, letra) => {
+        const newColors = [...backgroundColors];
+        if (letra === palabra[index]) {
+            newColors[index] = '#00ff00'; // Verde si coincide
+        } else if (palabra.includes(letra)) {
+            newColors[index] = '#ffa500'; // Naranja si está en la palabra pero en otra posición
+        } else {
+            newColors[index] = '#ff0000'; // Rojo si no coincide
+        }
+        setBackgroundColors(newColors);
+    };
 
 	return (
 		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaApp}>
@@ -69,11 +76,15 @@ export default function TabTwoScreen() {
 				
 				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPizarra}>					
 					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>S</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>A</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>U</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>N</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>A</Text>
+						{['S', 'A', 'I', 'O', 'A'].map((letra, index) => (
+                            <Text
+                                key={index}
+                                style={[styles.letra, { backgroundColor: backgroundColors[index] }]}
+                                onPress={() => compareLetters(index, letra)}
+                            >
+                                {letra}
+                            </Text>
+                        ))}
 					</ThemedView>
 					
 					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
@@ -116,6 +127,15 @@ export default function TabTwoScreen() {
 						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
 					</ThemedView>
 				</ThemedView>
+
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaTeclado}>
+						<TextInput
+							style={styles.inputText}
+							value={inputText}
+							onChangeText={setInputText}
+							placeholder="Escribe aquí"
+						/>
+					</ThemedView>
 				
 				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaTeclado}>
 				</ThemedView>
@@ -184,17 +204,17 @@ const styles = StyleSheet.create({
 		gap: '1%',
 	},
 
-	cajaTeclado: {
-		backgroundColor: '#115511',
-		flexDirection: 'column',
-		height: '40%',	// Altura
-		width: '100%',	// Anchura
-		// margin: 0,
-		alignItems: 'center', // Alinea horizontalmente
-		alignContent: 'center', // Alinea verticalmente
-		justifyContent: 'center', // Justifica
-		// gap: '1%',
-	},
+	// cajaTeclado: {
+	// 	backgroundColor: '#115511',
+	// 	flexDirection: 'column',
+	// 	height: '40%',	// Altura
+	// 	width: '100%',	// Anchura
+	// 	// margin: 0,
+	// 	alignItems: 'center', // Alinea horizontalmente
+	// 	alignContent: 'center', // Alinea verticalmente
+	// 	justifyContent: 'center', // Justifica
+	// 	// gap: '1%',
+	// },
 
 	cajaPalabra: {
 		backgroundColor: '#bb00bb',
@@ -226,6 +246,30 @@ const styles = StyleSheet.create({
         fontSize: 45,
 		padding: 0,
 	},
+
+	p1l1: {
+		backgroundColor: '#ddaadd',
+		color: '#333333',
+	},
+	
+    cajaTeclado: {
+        backgroundColor: '#115511',
+        flexDirection: 'column',
+        height: '20%', // Altura
+        width: '100%', // Anchura
+        alignItems: 'center', // Alinea horizontalmente
+        justifyContent: 'center', // Justifica
+    },
+    inputText: {
+        borderColor: '#f0f0f0',
+        borderWidth: 2,
+        height: 50,
+        width: '80%',
+        borderRadius: 15,
+        paddingLeft: 15,
+        paddingRight: 15,
+        backgroundColor: '#ffffff',
+    },
 
 	// logo: {
 	// 	// backgroundColor: '#985858',
