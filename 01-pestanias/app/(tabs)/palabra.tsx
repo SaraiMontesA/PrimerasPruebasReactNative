@@ -8,7 +8,6 @@ import {
 	Platform,
 	View,
 	TextInput,
-	Text,
 	Button,
 	TouchableOpacity,
 	Alert
@@ -62,117 +61,147 @@ export default function TabTwoScreen() {
 	};
 
 	return (
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaBody}>
+		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaApp}>
+				{/* <ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLogo}>
+					<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.logo} />
+				</ThemedView> */}
+			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaBody}>
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPizarra}>
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+				</ThemedView>
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+				</ThemedView>
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+				</ThemedView>
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+				</ThemedView>
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+				</ThemedView>
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+						<ThemedText lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</ThemedText>
+					</ThemedView>
+				</ThemedView>
 
-			{/* <ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLogo}>
-				<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.logo} />
-			</ThemedView> */}
-			
-			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
 				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
+
+
+				
+				{/*
+
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaResto}>
+
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+						<TouchableOpacity style={styles.button}>
+							<Text style={styles.buttonText}>{lenguaje.contGoogle}</Text>
+						</TouchableOpacity>
+					</ThemedView>
+
+					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
+						<TouchableOpacity style={styles.button} onPress={showAlert}>
+							<Text style={styles.buttonText}>{lenguaje.contApple}</Text>
+						</TouchableOpacity>
+					</ThemedView>
+				</ThemedView> */}
+				
+				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaTeclado}>
 				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
+
 			</ThemedView>
-			
-			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-			</ThemedView>
-			
-			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-			</ThemedView>
-			
-			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-			</ThemedView>
-			
-			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-			</ThemedView>
-			
-			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLetra}>
-				</ThemedView>
-			</ThemedView>
-
-
-
-
-
-
-
-
-
-
-			
-			{/*
-
-			<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaResto}>
-
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-					<TouchableOpacity style={styles.button}>
-						<Text style={styles.buttonText}>{lenguaje.contGoogle}</Text>
-					</TouchableOpacity>
-				</ThemedView>
-
-				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaContenido}>
-					<TouchableOpacity style={styles.button} onPress={showAlert}>
-						<Text style={styles.buttonText}>{lenguaje.contApple}</Text>
-					</TouchableOpacity>
-				</ThemedView>
-			</ThemedView> */}
-
 		</ThemedView>
 	);
 }
@@ -183,70 +212,80 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
 
-	cajaBody: {
-		// backgroundColor: '#985858',
+	cajaApp: {
+		backgroundColor: '#985858',
 		flexDirection: 'column',
 		height: '100%',	// Altura
 		width: '100%',	// Anchura
 	},
 
-	cajaLogo: {
-		// backgroundColor: '#985858',
+	cajaBody: {
+		backgroundColor: '#330033',
 		flexDirection: 'column',
-		marginTop: 0,
-		// marginBottom: 0,
-		// paddingBottom: 0,
-		height: '35%',	// Altura
+		height: '95%',	// Altura
 		width: '100%',	// Anchura
-		alignItems: 'center', // Alinea horizontalmente
-		alignContent: 'center', // Alinea verticalmente
-		justifyContent: 'center', // Justifica
-	},
-
-	cajaResto: {
-		// backgroundColor: '#985858',
-		flexDirection: 'column',
-		height: '65%',	// Altura
-		width: '100%',	// Anchura
+		marginTop: '11%',
 		margin: 0,
 		alignItems: 'center', // Alinea horizontalmente
 		alignContent: 'center', // Alinea verticalmente
 		justifyContent: 'center', // Justifica
-		gap: 10,
+		// gap: '1%',
 	},
 
-	cajaContenido: {
-		// backgroundColor: '#f8f0f2',
+	cajaPizarra: {
+		backgroundColor: '#552255',
 		flexDirection: 'column',
+		height: '60%',	// Altura
 		width: '100%',	// Anchura
-		margin: 0,
-		paddingBottom: 12,
-		alignItems: 'center',
-		alignContent: 'center',
-		justifyContent: 'center',
+		// marginTop: '15%',
+		// margin: 0,
+		alignItems: 'center', // Alinea horizontalmente
+		alignContent: 'center', // Alinea verticalmente
+		justifyContent: 'center', // Justifica
+		gap: '1%',
+	},
+
+	cajaTeclado: {
+		backgroundColor: '#115511',
+		flexDirection: 'column',
+		height: '40%',	// Altura
+		width: '100%',	// Anchura
+		// margin: 0,
+		alignItems: 'center', // Alinea horizontalmente
+		alignContent: 'center', // Alinea verticalmente
+		justifyContent: 'center', // Justifica
+		// gap: '1%',
 	},
 
 	cajaPalabra: {
-		backgroundColor: '#f8f0f2',
+		backgroundColor: '#bb00bb',
 		flexDirection: 'row',
-		height: '10%',	// Altura
-		width: '100%',	// Anchura
-		margin: 5,
-		gap: 10,
+		height: '15.5%',	// Altura
+		width: '95%',	// Anchura
+		// margin: 5,
+		gap: '1%',
 		// paddingBottom: 12,
 		alignItems: 'center',
-		alignContent: 'center',
 		justifyContent: 'center',
+		// alignContent: 'center',
 	},
 
 	cajaLetra: {
 		backgroundColor: '#556655',
 		// flexDirection: 'column',
 		height: '100%',	// Altura
-		width: '15%',	// Anchura
+		width: '19%',	// Anchura
 		alignItems: 'center',
-		alignContent: 'center',
 		justifyContent: 'center',
+
+	},
+
+	letra: {
+		// TODO: Poner color de light y dark mode
+        color: '#333333',
+		// Texto en negrita
+		fontWeight: 'bold',
+        fontSize: 20,
 	},
 
 	logo: {
