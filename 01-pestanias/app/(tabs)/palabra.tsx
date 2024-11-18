@@ -14,6 +14,8 @@ import {
 	Alert
 } from 'react-native';
 
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 import React, { useState } from 'react';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -68,7 +70,7 @@ export default function TabTwoScreen() {
     };
 
 	return (
-		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaApp}>
+		<SafeAreaView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaApp}>
 				{/* <ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaLogo}>
 					<Image source={require('@/assets/images/MeLoPidoLogo/MeLoPidoPurple.png')} style={styles.logo} />
 				</ThemedView> */}
@@ -77,55 +79,21 @@ export default function TabTwoScreen() {
 				<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPizarra}>					
 					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
 						{['S', 'U', 'I', 'O', 'A'].map((letra, index) => (
-                            <Text
-                                key={index}
-                                style={[styles.letra, { backgroundColor: backgroundColors[index] }]}
-                                onPress={() => compareLetters(index, letra)}
-                            >
-                                {letra}
-                            </Text>
-                        ))}
+							<Text
+								key={index}
+								style={[styles.letra, { backgroundColor: backgroundColors[index] }]}
+								onPress={() => compareLetters(index, letra)}
+							>
+								{letra}
+							</Text>
+						))}
 					</ThemedView>
-					
-					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-					</ThemedView>
-					
-					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-					</ThemedView>
-					
-					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-					</ThemedView>
-					
-					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-					</ThemedView>
-					
-					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-						<Text lightColor={colors.light} darkColor={colors.dark} style={styles.letra}>X</Text>
-					</ThemedView>
+
+					<Palabra></Palabra>
+					<Palabra></Palabra>
+					<Palabra></Palabra>
+					<Palabra></Palabra>
+					<Palabra></Palabra>
 				</ThemedView>
 
 					<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaTeclado}>
@@ -158,8 +126,39 @@ export default function TabTwoScreen() {
 				</ThemedView> */}
 
 			</ThemedView>
-		</ThemedView>
+		</SafeAreaView>
 	);
+}
+
+export function Palabra() {
+    const [backgroundColors, setBackgroundColors] = useState(['#abcdef', '#abcdef', '#abcdef', '#abcdef', '#abcdef']);
+    const [inputText, setInputText] = useState('');
+    const palabra = 'SAUNA'; // La palabra con la que se va a comparar
+
+    const compareLetters = (index, letra) => {
+        const newColors = [...backgroundColors];
+        if (letra === palabra[index]) {
+            newColors[index] = '#00ff00'; // Verde si coincide
+        } else if (palabra.includes(letra)) {
+            newColors[index] = '#ffa500'; // Naranja si está en la palabra pero en otra posición
+        } else {
+            newColors[index] = '#ff0000'; // Rojo si no coincide
+        }
+        setBackgroundColors(newColors);
+    };
+	return(
+		<ThemedView lightColor={colors.light} darkColor={colors.dark} style={styles.cajaPalabra}>
+			{['S', 'U', 'I', 'O', 'A'].map((letra, index) => (
+				<Text
+					key={index}
+					style={[styles.letra, { backgroundColor: backgroundColors[index] }]}
+					onPress={() => compareLetters(index, letra)}
+				>
+					{letra}
+				</Text>
+			))}
+		</ThemedView>
+	)
 }
 
 // ####################################################################################
@@ -183,7 +182,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
 		height: '95%',	// Altura
 		width: '100%',	// Anchura
-		marginTop: '11%',
+		// marginTop: '11%',
 		margin: 0,
 		alignItems: 'center', // Alinea horizontalmente
 		alignContent: 'center', // Alinea verticalmente
